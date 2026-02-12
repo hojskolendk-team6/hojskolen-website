@@ -1,4 +1,5 @@
 ---
+import Card from "./component1/card.astro"
 import PrimaryButton from '../components/PrimaryButton.astro';
 import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
@@ -12,6 +13,9 @@ import Layout from '../components/layout.astro';
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
 		<title>Astro</title>
 	</head>
 	<Layout>
@@ -19,8 +23,11 @@ import Layout from '../components/layout.astro';
 		<Navigation /> 
 	</header>
 	<body>
-		<h1>Astro</h1>
-		<PrimaryButton>Se rejsekalender</PrimaryButton>
+		<section>
+		<Card dage="90 dage" h3="Maldiverne" byline="se afgange" image/>
+		</section>
+		
+		<h1>Astronautisergooooood</h1>
 	</body>
 </html>
 </Layout>
