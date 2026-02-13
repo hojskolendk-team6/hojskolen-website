@@ -4,12 +4,20 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+:root {
+  --bgcolor: #fffbe7;
+  --blue: #d5e7ee;
+}
 /* Font */
 body {
   font-family: "Inter", sans-serif;
   color: #222;
-  background-color: #f8f8f8;
+  background-color: var(--bgcolor);
+}
+.bluesection {
+  background-color: var(--blue);
+
+  min-height: 100vh;
 }
 
 /* Typography */
@@ -36,8 +44,9 @@ p {
   margin-bottom: 1rem;
 }
 
-section {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
+.grid-elevhistorie {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 60px;
 }

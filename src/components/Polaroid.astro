@@ -1,0 +1,76 @@
+
+<section>
+<article class="grid_1-1-1-1">
+	  <div class="polaroid">
+      <img src="/billeder/bjergbilllede.webp" alt="bjergbillede" />
+      <div class="caption">Sammenhold</div>
+  </div>
+  <div class="polaroid">
+      <img src="/billeder/hoppe.webp" alt="hoppe" />
+      <div class="caption">Bucketlist oplevelser</div>
+  </div>
+  <div class="polaroid">
+      <img src="/billeder/gruppe.webp" alt="gruppe billede" />
+      <div class="caption">En rejseleder der støtter dig</div>
+  </div>
+  <div class="polaroid">
+      <img src="/billeder/piger.webp" alt="piger" />
+      <div class="caption">Selvudvikling</div>
+  </div>
+</article>
+</section>
+
+<style>
+.polaroid {
+  background-color: white;    
+  padding: 10px 10px 30px;    
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.217); 
+  text-align: center;
+  font-family: sans-serif;
+  margin: 0;   
+  padding: 20px;   
+  width: 100%;    
+  border-radius: 10px;     
+}
+
+.polaroid img {
+  width: 100%;
+  height: 300px;    
+  object-fit: cover;
+  display: block;
+  margin-bottom: 20px;      
+}
+
+.polaroid:nth-child(1) {
+  transform: rotate(-3deg) translateY(0px);
+}
+
+.polaroid:nth-child(2) {
+  transform: rotate(2deg) translateY(30px);
+}
+
+.polaroid:nth-child(3) {
+  transform: rotate(-1deg) translateY(-20px);
+}
+
+.polaroid:nth-child(4) {
+  transform: rotate(3deg) translateY(15px);
+}
+
+.caption {
+ font-family: "Inter", sans-serif;
+ font-weight: bold;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.grid_1-1-1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 50px;
+  padding: 40px 60px;    
+} 
+
+
+
+</style>

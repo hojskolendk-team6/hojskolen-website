@@ -1,0 +1,45 @@
+---
+const { image, overskrift, citat, navn } = Astro.props;
+---
+
+<article class="elev-historie">
+  <img src={image} alt={overskrift} />
+  <div class="content">
+    <h3>{overskrift}</h3>
+    <p>"{citat}"</p>
+    <p class="navn"><strong>- {navn}</strong></p>
+  </div>
+
+</article>
+
+<style>
+.elev-historie {
+  display: flex;
+  flex-direction: column;
+
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+  height: 100%; /* vigtigt */
+}
+
+.elev-historie img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* gør at content fylder resten */
+}
+
+.content h3 {
+  min-height: 3em; /* sikrer samme højde */
+}
+</style>
