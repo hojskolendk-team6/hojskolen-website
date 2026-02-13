@@ -11,8 +11,8 @@
 }
 /* Font */
 body {
-  font-family: "Inter", sans-serif;
-  color: #222;
+  font-style: normal;
+  color: black;
   background-color: var(--bgcolor);
 }
 .bluesection {
@@ -26,24 +26,28 @@ body {
 
 /* Typography */
 h1 {
+  font-family: "Dela Gothic One", sans-serif;
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 h2 {
+  font-family: "Poppins", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
 }
 
 h3 {
+  font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
 }
 
 p {
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
