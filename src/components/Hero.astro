@@ -1,0 +1,87 @@
+---
+---
+
+<html lang="en">
+	<head> 
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+		
+	</head>
+	<body>
+		<section class="hero">
+ <video class="hero__video" autoplay muted loop playsinline controls>
+  <source src="/Untitled.mp4" type="video/mp4" />
+</video>
+
+  <div class="hero__overlay"></div>
+
+  <div class="hero__content">
+    <h1>
+      DIT<br />
+      HØJSKOLEEVENTYR<br />
+      STARTER HER
+    </h1>
+
+    <p>
+      HØJSKOLENDK er en dansk højskole for unge i alderen 18–26 år.
+      Vi brænder for oplevelser, fællesskabet og det gode eventyr.
+    </p>
+
+    <div class="btn">
+      <a href="#" class="btn">Se rejsekalender</a>
+      <a href="#" class="btn">Infomøder</a>
+    </div>
+  </div>
+</section>
+	</body>
+</html>
+
+<style>
+
+html,
+body {
+  height: 100%;
+}
+
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 2rem;
+}
+
+.hero__content h1 {
+ color: white;
+ text-align: center;
+ font-size: 80px;
+  text-align: center;
+}
+
+.hero__content p {
+  color: white;
+  text-align: center;
+
+}
+
+</style>
