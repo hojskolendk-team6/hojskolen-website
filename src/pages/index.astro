@@ -11,6 +11,48 @@ import ElevHistorie from "../components/ElevHistorie.astro";
 	<Layout>
 
 		<Navigation /> 
+	</header>
+	<body>
+
+		<section class="eventyr">
+			<h1>Vælg dit eventyr</h1>
+			<p>HØJSKOLENDK er en dansk højskole for unge i alderen 18-28 år.<br>
+				 Vi brænder for oplevelser, fællesskabet og det gode eventyr.</p>
+		<section class="grid">
+			<Card dage="90 dage" h3="Maldiverne" byline="se afgange" image="/billeder/hojskole2.png" cardnumber="nummer1"/>
+			<Card poptext="2 ledige pladser" dage="90 dage" h3="Sri Lanka" byline="se afgange" image="/billeder/hojskole3.png" cardnumber="nummer2"/>
+			<Card dage="90 dage" h3="Bali" byline="se afgange" image="/billeder/hojskole5.png" cardnumber="nummer3"/>
+	
+			<Card dage="90 dage" h3="Hawaii" byline="se afgange" image="/billeder/hojskole6.jpg" cardnumber="nummer4"/>
+			<Card poptext="3 ledige pladser" dage="90 dage" h3="Gili Island" byline="se afgange" image="/billeder/hojskole8.jpeg" cardnumber="nummer5"/>
+		</section>
+		</section>
+
+		<style>
+ .grid {
+   display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+  padding:  0px 80px;
+}
+
+.eventyr{
+	background-color:antiquewhite;
+}
+.eventyr h1, p{
+	 text-align: center;}
+
+	 .eventyr h1{
+		font-family: "Dela Gothic One", sans-serif;
+		font-size: 35px;
+	 }
+	
+</style>
+		
+		<h1>Astronautisergooooood</h1>
+	</body>
+</html>
+</Layout>
 
 		<section>
 		<Card dage="90 dage" h3="Maldiverne" byline="se afgange" image/>
