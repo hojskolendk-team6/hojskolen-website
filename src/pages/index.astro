@@ -1,5 +1,5 @@
 ---
-import Card from "./component1/card.astro"
+import Card from "../components/card.astro";
 import PrimaryButton from '../components/PrimaryButton.astro';
 import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
@@ -16,7 +16,7 @@ import ElevHistorie from "../components/ElevHistorie.astro";
 
 		<section class="eventyr">
 			<h1>Vælg dit eventyr</h1>
-			<p>HØJSKOLENDK er en dansk højskole for unge i alderen 18-28 år.<br>
+			<p class="p-overskift">HØJSKOLENDK er en dansk højskole for unge i alderen 18-28 år.<br>
 				 Vi brænder for oplevelser, fællesskabet og det gode eventyr.</p>
 		<section class="grid">
 			<Card dage="90 dage" h3="Maldiverne" byline="se afgange" image="/billeder/hojskole2.png" cardnumber="nummer1"/>
@@ -28,40 +28,21 @@ import ElevHistorie from "../components/ElevHistorie.astro";
 		</section>
 		</section>
 
-		<style>
- .grid {
-   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  justify-content: center;
-  padding:  0px 80px;
-}
+<section class="bluesection">
+<h1>Oplevelser for livet & fantastiske eventyr</h1>
+</section>
 
-.eventyr{
-	background-color:antiquewhite;
-}
-.eventyr h1, p{
-	 text-align: center;}
+<section>
+<h1>+3.000 glade elever siden 2010</h1>
+</section>
 
-	 .eventyr h1{
-		font-family: "Dela Gothic One", sans-serif;
-		font-size: 35px;
-	 }
-	
-</style>
-		
-		<h1>Astronautisergooooood</h1>
-	</body>
-</html>
-</Layout>
-
-		<section>
-		<Card dage="90 dage" h3="Maldiverne" byline="se afgange" image/>
-		</section>
-</Layout>
 <section class="bluesection">
 <h1> Klar på højskoleeventyr, fælleskab & masser af adventure?</h1>
 <Polaroid /></section>
 
+<section class="yellowsection">
+<h1>Kom til infomøde</h1>
+</section>
 
 <section class="bluesection">
   <article class="grid-elevhistorie">
@@ -86,4 +67,9 @@ import ElevHistorie from "../components/ElevHistorie.astro";
   </article>
   </section>
 
-  
+
+		
+	</body>
+
+
+  </Layout>

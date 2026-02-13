@@ -7,6 +7,7 @@
 :root {
   --bgcolor: #fffbe7;
   --blue: #d5e7ee;
+  --red: #752727;
 }
 /* Font */
 body {
@@ -16,15 +17,20 @@ body {
 }
 .bluesection {
   background-color: var(--blue);
-
+  min-height: 100vh;
+}
+.yellowsection {
+  background-color: var(--bgcolor);
   min-height: 100vh;
 }
 
 /* Typography */
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: var(--red);
+  text-align: center;
 }
 
 h2 {
@@ -47,9 +53,29 @@ p {
 section {
   margin: auto;
   padding: 2rem;
-.grid-elevhistorie {
+  .grid-elevhistorie {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    padding: 60px;
+  }
+}
+.grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
-  padding: 60px;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+  padding: 0px 80px;
+}
+
+.eventyr {
+  background-color: var(--bgcolor);
+}
+
+.eventyr h1 {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 35px;
+}
+
+.p-overskift {
+  text-align: center;
 }
