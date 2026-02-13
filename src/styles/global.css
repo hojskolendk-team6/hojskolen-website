@@ -47,6 +47,8 @@ p {
 section {
   margin: auto;
   padding: 2rem;
+}
+
 .grid-elevhistorie {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
