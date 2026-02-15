@@ -1,19 +1,27 @@
 ---
+import Navigation from "../components/Navigation.astro";
 import "../styles/forms.css";
 ---
 
 <!doctype html>
 <html lang="da">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex,nofollow" />
-    <title>Tilmeld infomøde | HøjskolenDK</title>
-  </head>
+ <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>Tilmeld infomøde | HøjskolenDK</title>
+</head>
 
   <body class="forms-page">
+    <Navigation />
+
     <main class="forms">
-      <!-- HERO -->
       <header class="forms__hero">
         <div class="forms__heroInner">
           <p class="badge">Uforpligtende infomøde</p>
@@ -31,10 +39,8 @@ import "../styles/forms.css";
         </div>
       </header>
 
-      <!-- CONTENT -->
       <section class="forms__content">
         <div class="grid">
-          <!-- LEFT: INFO -->
           <aside class="card card--info">
             <h2>Det får du på infomødet</h2>
             <ul class="checklist">
@@ -52,7 +58,6 @@ import "../styles/forms.css";
               <img src="/billeder/gruppe.webp" alt="Unge i fællesskab" loading="lazy" />
             </figure>
 
-            <!-- ✅ SUMMARY MOVED UNDER IMAGE -->
             <div class="summaryBox summaryBox--left" aria-live="polite">
               <h3>Din tilmelding</h3>
               <ul>
@@ -67,7 +72,6 @@ import "../styles/forms.css";
             </div>
           </aside>
 
-          <!-- RIGHT: FORM -->
           <section class="card card--form" aria-labelledby="formTitle">
             <form
               class="form"
@@ -125,7 +129,6 @@ import "../styles/forms.css";
                 <p class="muted small">Datoer skifter alt efter om du vælger online eller fysisk.</p>
               </div>
 
-              <!-- ✅ DESTINATIONS: cards + details with MORE cards -->
               <fieldset class="fieldset">
                 <legend>Hvilke destinationer vil du høre mere om?</legend>
                 <p class="muted small">Vælg gerne flere.</p>
@@ -213,7 +216,6 @@ import "../styles/forms.css";
               </div>
             </form>
 
-            <!-- Confirmation dialog -->
             <dialog class="confirmDialog" data-confirm-dialog>
               <div class="confirmDialog__inner">
                 <h3>Bekræft din tilmelding</h3>
@@ -257,7 +259,6 @@ import "../styles/forms.css";
                 const charCountEl = document.querySelector("[data-char-count]");
                 const destCountEl = document.querySelector("[data-dest-count]");
 
-                // ✅ summary is now in LEFT column, so we query from document
                 const sumName = document.querySelector("[data-sum-name]");
                 const sumEmail = document.querySelector("[data-sum-email]");
                 const sumPhone = document.querySelector("[data-sum-phone]");
@@ -417,8 +418,8 @@ import "../styles/forms.css";
 
       <footer class="forms__footer">
         <p class="fineprint">
-          Ved tilmelding accepterer du, at HøjskolenDK må sende info om infomødet.
-          Siden er et studieprojekt og er ikke indekseret.
+          Ved tilmelding accepterer du, at HøjskolenDK må sende info om infomødet. Siden er et studieprojekt og er ikke
+          indekseret.
         </p>
       </footer>
     </main>
