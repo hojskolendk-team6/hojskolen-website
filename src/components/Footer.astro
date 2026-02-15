@@ -1,0 +1,100 @@
+---
+import '../styles/global.css';
+---
+
+<footer>
+<a id="logo" href="/">HØJSKOLEDK</a>
+
+<section class="footer_kategorier">
+  <div>
+    <p class="overskrift_h3">OPHOLD</p>
+    <p class="separeret">Rejsekalender</p>
+    <p>Højskoleophold</p>
+    <p>Sommerhøjskole</p>
+  </div>
+  <div>
+    <p class="overskrift_h3">GODT AT VIDE</p>
+    <p class="separeret">FAQ</p>
+    <p>Job</p>
+    <p>Bæredygtighed</p>
+    <p>Rejsegarantifonden</p>
+    <p>Fra tilmedling til afrejse</p>
+    <p>Generelle bestemmelser</p>
+    <p>Grupperejser for unge</p>
+    <p>Rejs i sabbatår</p>
+  </div>
+  <div>
+    <p class="overskrift_h3">KONTAKT OS</p>
+    <p class="separeret">Rosenørns Allé 31</p>
+    <p>1970 København</p>
+    <p>Danmark</p>
+    <p class="separeret">Haskegårdsvej 8</p>
+    <p>8210 Aarhus</p>
+    <p>Danmark</p>
+    <p class="separeret">Telefon: 7027 9007</p>
+    <p>Mandag til Fredag // Kl. 10:00-16:00</p>
+    <p>Mail: info@hojskolendk.dk</p>
+  </div>
+</section>
+
+<section class="footer_samarbejdspartner">
+<p class="overskrift_h3">SAMARBEJDSPARTNERE</p>
+<div class="footer_titel">
+<img class="footer_samarbejdspartner_logo" src="/public/billeder/rejsegarantifonden.webp">
+<img class="footer_samarbejdspartner_logo" src="/public/billeder/jysk_rejsebureau.webp">
+<img class="footer_samarbejdspartner_logo" src="/public/billeder/climate_project.webp">
+</div>
+</section>
+
+</footer>
+
+
+
+<style>
+footer{
+  background-color: #752727;
+  color: #F9F6E7;
+}
+
+#logo  {
+  color: #D5E7EE;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 2rem;
+  display: inline-block;
+  transform: rotate(-3deg);
+  padding:2rem;
+}
+#logo a:hover {
+  color: #923e3e;
+}
+
+.footer_kategorier{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 10rem;
+}
+
+.separeret{
+  margin-top: 2rem;
+}
+
+.overskrift_h3{
+  font-weight: 1000;
+  font-size: 1.3rem;
+}
+
+.footer_samarbejdspartner{
+  margin-left: 2rem;
+}
+
+.footer_samarbejdspartner_logo{
+  max-width: 10rem;
+}
+
+.footer_titel{
+  display: flex;     
+  gap: 5rem;    
+  align-items: center;
+}
+</style>
