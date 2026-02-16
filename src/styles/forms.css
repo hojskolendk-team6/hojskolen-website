@@ -1,6 +1,6 @@
 .forms-page {
   --bg: #f5f1eb;
-  --ink: #1f2a44;
+  --ink: black;
   --muted: rgba(31, 42, 68, 0.72);
   --card: #ffffff;
   --line: rgba(31, 42, 68, 0.14);
@@ -51,12 +51,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(245, 241, 235, 0.85),
-    rgba(245, 241, 235, 0.55) 55%,
-    rgba(245, 241, 235, 0.95)
-  );
+  background: linear-gradient(180deg, rgba(245, 241, 235, 0.85), rgba(245, 241, 235, 0.55) 55%, rgba(245, 241, 235, 0.95));
   z-index: 1;
 }
 
