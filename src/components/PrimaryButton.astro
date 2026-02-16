@@ -1,9 +1,9 @@
 ---
+const { href } = Astro.props;
 ---
-
-<button class="btn">
-    <slot></slot>
-</button>
+<a href={href} class="btn">
+  <slot />
+</a>
 
 <style>
   .btn {
@@ -13,6 +13,9 @@
     color: white;
     border: none;
     font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    text-decoration: none;
   }
   .btn:hover {
     background: #923e3e;
