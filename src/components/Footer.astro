@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+
 ---
 
 <footer>
@@ -34,6 +35,12 @@ import '../styles/global.css';
     <p class="separeret">Telefon: 7027 9007</p>
     <p>Mandag til Fredag // Kl. 10:00-16:00</p>
     <p>Mail: info@hojskolendk.dk</p>
+    <div class="some_ikoner">
+      <a href="https://www.figma.com/design/6ZuGBJpwELIN2FO1A2bhG5/H%C3%B8jskolen.dk?node-id=211-320" target="_blank"> <img src="/public/billeder/insta_ikon.png" class="ikon"></a>
+      <img src="/public/billeder/facebook_ikon.png" class="ikon">
+      <img src="/public/billeder/youtube_ikon.png" class="ikon">
+      <img src="/public/billeder/tiktok_ikon.png" class="ikon">
+    </div>
   </div>
 </section>
 
@@ -96,5 +103,19 @@ footer{
   display: flex;     
   gap: 5rem;    
   align-items: center;
+}
+
+.some_ikoner{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 10rem;
+  gap: 1rem;
+  margin-top: 4rem;
+
+}
+
+.ikon{
+  max-width: 3rem;
+
 }
 </style>
