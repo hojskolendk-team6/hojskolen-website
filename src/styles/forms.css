@@ -1,7 +1,7 @@
 .forms-page {
   --bg: #f5f1eb;
-  --ink: #1f2a44;
-  --muted: rgba(31, 42, 68, 0.72);
+  --ink: #000000;
+  --muted: rgba(0, 0, 0, 0.72);
   --card: #ffffff;
   --line: rgba(31, 42, 68, 0.14);
   --accent: #0f6b6b;
