@@ -1,0 +1,431 @@
+---
+import Navigation from "../components/Navigation.astro";
+import "../styles/forms.css";
+---
+
+<!doctype html>
+<html lang="da">
+ <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>Tilmeld infomøde | HøjskolenDK</title>
+</head>
+
+  <body class="forms-page">
+    <Navigation />
+
+    <main class="forms">
+      <header class="forms__hero">
+        <div class="forms__heroInner">
+          <p class="badge">Uforpligtende infomøde</p>
+          <h1>Kom og mærk efter</h1>
+       <p class="lead">
+  Du tilmelder dig <strong>kun et infomøde</strong> og mærker om rejsen er noget for dig.
+</p>
+
+<p class="lead">
+  Få en fornemmelse af fællesskabet, destinationerne og stil alle dine spørgsmål.
+</p>
+
+
+          <ul class="trustRow" aria-label="Tryghedspunkter">
+            <li>Gratis</li>
+            <li>Ingen pres</li>
+            <li>Du kan altid afmelde</li>
+          </ul>
+        </div>
+      </header>
+
+      <section class="forms__content">
+        <div class="grid">
+          <aside class="card card--info">
+            <h2>Det får du på infomødet</h2>
+            <ul class="checklist">
+              <li>Overblik over ophold og destinationer</li>
+              <li>Hvordan hverdagen og fællesskabet føles</li>
+              <li>Pris, datoer og praktisk info</li>
+              <li>Q&amp;A – alt det, du er i tvivl om</li>
+            </ul>
+
+            <div class="note">
+              <strong>Tip:</strong> Vælg de destinationer du er nysgerrig på – så målretter vi infoen til dig.
+            </div>
+
+            <figure class="miniMedia" aria-label="Stemningsbillede">
+              <img src="/billeder/gruppe.webp" alt="Unge i fællesskab" loading="lazy" />
+            </figure>
+
+            <div class="summaryBox summaryBox--left" aria-live="polite">
+              <h3>Din tilmelding</h3>
+              <ul>
+                <li><strong>Navn:</strong> <span data-sum-name>—</span></li>
+                <li><strong>Email:</strong> <span data-sum-email>—</span></li>
+                <li><strong>Telefon:</strong> <span data-sum-phone>—</span></li>
+                <li><strong>Deltagelse:</strong> <span data-sum-type>—</span></li>
+                <li><strong>Dato/tid:</strong> <span data-sum-slot>—</span></li>
+                <li><strong>Destinationer:</strong> <span data-sum-dests>Vælg destinationer</span></li>
+              </ul>
+              <p class="tiny muted">Bare et overblik – du tilmelder dig kun infomøde.</p>
+            </div>
+          </aside>
+
+          <section class="card card--form" aria-labelledby="formTitle">
+            <form
+              class="form"
+              name="infomode-tilmelding"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="infomode-tilmelding" />
+              <p class="sr-only">
+                <label>
+                  Don’t fill this out if you’re human:
+                  <input name="bot-field" />
+                </label>
+              </p>
+
+              <div class="form__top">
+                <h2 id="formTitle">Tilmeld dig infomødet</h2>
+                <p class="muted">Det tager under 1 minut. <strong>Uforpligtende.</strong></p>
+              </div>
+
+              <div class="form__row">
+                <div class="field">
+                  <label for="name">Navn</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+              </div>
+
+              <div class="form__row">
+                <div class="field">
+                  <label for="meetingType">Hvordan vil du deltage?</label>
+                  <select id="meetingType" name="meetingType" required>
+                    <option value="" selected disabled>Vælg en mulighed</option>
+                    <option value="online">Online</option>
+                    <option value="fysisk">Fysisk</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="phone">Telefon</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="meetingSlot">Vælg dato &amp; tidspunkt</label>
+                <select id="meetingSlot" name="meetingSlot" required disabled>
+                  <option value="" selected>Vælg først online/fysisk</option>
+                </select>
+                <p class="muted small">Datoer skifter alt efter om du vælger online eller fysisk.</p>
+              </div>
+
+              <fieldset class="fieldset">
+                <legend>Hvilke destinationer vil du høre mere om?</legend>
+                <p class="muted small">Vælg gerne flere.</p>
+
+                <div class="destGrid" data-dest-grid>
+                  {[
+                    { id: "hawaii", label: "Hawaii", img: "/billeder/hojskole8.jpeg" },
+                    { id: "mexico", label: "Mexico", img: "/billeder/hojskole6.jpg" },
+                    { id: "caribien", label: "Caribien", img: "/billeder/hojskole3.png" },
+                    { id: "bali", label: "Bali", img: "/billeder/hojskole5.png" },
+                  ].map((d) => (
+                    <label class="destCard" for={`dest-main-${d.id}`}>
+                      <input
+                        class="destCard__check"
+                        id={`dest-main-${d.id}`}
+                        type="checkbox"
+                        name="destinations"
+                        value={d.label}
+                      />
+                      <span class="destCard__media" style={`background-image:url('${d.img}')`} aria-hidden="true" />
+                      <span class="destCard__label">{d.label}</span>
+                    </label>
+                  ))}
+                </div>
+
+                <details class="destDropdown">
+                  <summary class="destDropdown__summary">
+                    Vælg flere destinationer
+                    <span class="destDropdown__hint"><span data-dest-count>0</span> valgt</span>
+                  </summary>
+
+                  <div class="destDropdown__panel destGrid destGrid--more">
+                    {[
+                      { id: "japan", label: "Japan", img: "/billeder/hojskole2.png" },
+                      { id: "sydkorea", label: "Sydkorea", img: "/billeder/hojskole3.png" },
+                      { id: "australien", label: "Australien", img: "/billeder/hojskole5.png" },
+                      { id: "colombia", label: "Colombia", img: "/billeder/hojskole6.jpg" },
+                      { id: "costa", label: "Costa Rica", img: "/billeder/hojskole8.jpeg" },
+                      { id: "maldiverne", label: "Maldiverne", img: "/billeder/hojskole2.png" },
+                      { id: "srilanka", label: "Sri Lanka", img: "/billeder/hojskole5.png" },
+                      { id: "vietnam", label: "Vietnam", img: "/billeder/hojskole6.jpg" },
+                    ].map((d) => (
+                      <label class="destCard" for={`dest-more-${d.id}`}>
+                        <input
+                          class="destCard__check"
+                          id={`dest-more-${d.id}`}
+                          type="checkbox"
+                          name="destinations"
+                          value={d.label}
+                        />
+                        <span class="destCard__media" style={`background-image:url('${d.img}')`} aria-hidden="true" />
+                        <span class="destCard__label">{d.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </details>
+              </fieldset>
+
+              <div class="field">
+                <label for="message">Hvad er du nysgerrig på? <span class="muted">(valgfrit)</span></label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  maxlength="240"
+                  placeholder="Fx pris, fællesskab, tryghed, datoer..."
+                ></textarea>
+                <div class="charRow">
+                  <span class="muted small">Vi tager resten på mødet.</span>
+                  <span class="muted small"><span data-char-count>0</span>/240</span>
+                </div>
+              </div>
+
+              <label class="consent">
+                <input type="checkbox" name="consent" required />
+                <span>
+                  Ja tak – I må gerne kontakte mig om infomødet.
+                  <span class="muted">(Du kan altid afmelde.)</span>
+                </span>
+              </label>
+
+              <div class="form__actions">
+                <button class="btn btn--primary" type="submit">Tilmeld infomøde</button>
+                <p class="tiny muted">Du tilmelder dig <strong>ikke</strong> en rejse – kun et infomøde.</p>
+              </div>
+            </form>
+
+            <dialog class="confirmDialog" data-confirm-dialog>
+              <div class="confirmDialog__inner">
+                <h3>Bekræft din tilmelding</h3>
+                <p class="muted">Tjek lige at alt ser rigtigt ud — så sender vi den afsted.</p>
+
+                <div class="confirmList">
+                  <div><strong>Navn</strong><span data-confirm-name>—</span></div>
+                  <div><strong>Email</strong><span data-confirm-email>—</span></div>
+                  <div><strong>Telefon</strong><span data-confirm-phone>—</span></div>
+                  <div><strong>Deltagelse</strong><span data-confirm-type>—</span></div>
+                  <div><strong>Dato/tid</strong><span data-confirm-slot>—</span></div>
+                  <div><strong>Destinationer</strong><span data-confirm-dests>—</span></div>
+                  <div><strong>Besked</strong><span data-confirm-msg>—</span></div>
+                </div>
+
+                <div class="confirmActions">
+                  <button class="btn btn--ghost" type="button" data-confirm-cancel>Tilbage</button>
+                  <button class="btn btn--primary" type="button" data-confirm-submit>Bekræft &amp; tilmeld</button>
+                </div>
+
+                <p class="tiny muted">Uforpligtende. Du kan altid afmelde igen.</p>
+              </div>
+            </dialog>
+
+            <script is:inline>
+              (() => {
+                const root = document.currentScript && document.currentScript.closest("section");
+                if (!root) return;
+
+                const form = root.querySelector("form");
+                const dialog = root.querySelector("[data-confirm-dialog]");
+                if (!(form instanceof HTMLFormElement)) return;
+                if (!(dialog instanceof HTMLDialogElement)) return;
+
+                const nameEl = form.querySelector("#name");
+                const emailEl = form.querySelector("#email");
+                const phoneEl = form.querySelector("#phone");
+                const typeEl = form.querySelector("#meetingType");
+                const slotEl = form.querySelector("#meetingSlot");
+                const textarea = form.querySelector("#message");
+                const charCountEl = document.querySelector("[data-char-count]");
+                const destCountEl = document.querySelector("[data-dest-count]");
+
+                const sumName = document.querySelector("[data-sum-name]");
+                const sumEmail = document.querySelector("[data-sum-email]");
+                const sumPhone = document.querySelector("[data-sum-phone]");
+                const sumType = document.querySelector("[data-sum-type]");
+                const sumSlot = document.querySelector("[data-sum-slot]");
+                const sumDests = document.querySelector("[data-sum-dests]");
+
+                const cName = dialog.querySelector("[data-confirm-name]");
+                const cEmail = dialog.querySelector("[data-confirm-email]");
+                const cPhone = dialog.querySelector("[data-confirm-phone]");
+                const cType = dialog.querySelector("[data-confirm-type]");
+                const cSlot = dialog.querySelector("[data-confirm-slot]");
+                const cDests = dialog.querySelector("[data-confirm-dests]");
+                const cMsg = dialog.querySelector("[data-confirm-msg]");
+                const btnCancel = dialog.querySelector("[data-confirm-cancel]");
+                const btnSubmit = dialog.querySelector("[data-confirm-submit]");
+
+                const SLOTS = {
+                  online: [
+                    { label: "Tir d. 17. feb kl. 17:30–18:30 (Online)", value: "2026-02-17 17:30-18:30 online" },
+                    { label: "Tor d. 19. feb kl. 19:00–20:00 (Online)", value: "2026-02-19 19:00-20:00 online" },
+                    { label: "Man d. 23. feb kl. 16:30–17:15 (Online)", value: "2026-02-23 16:30-17:15 online" },
+                  ],
+                  fysisk: [
+                    { label: "Ons d. 18. feb kl. 17:00–18:00 (Kbh)", value: "2026-02-18 17:00-18:00 fysisk" },
+                    { label: "Fre d. 20. feb kl. 16:00–17:00 (Aarhus)", value: "2026-02-20 16:00-17:00 fysisk" },
+                    { label: "Lør d. 22. feb kl. 11:00–12:00 (Kolding)", value: "2026-02-22 11:00-12:00 fysisk" },
+                  ],
+                };
+
+                const getValue = (el) => {
+                  if (!el) return "";
+                  if (el instanceof HTMLInputElement) return el.value.trim();
+                  if (el instanceof HTMLSelectElement) return el.value.trim();
+                  if (el instanceof HTMLTextAreaElement) return el.value.trim();
+                  return "";
+                };
+
+                const selectedDestinations = () =>
+                  Array.from(form.querySelectorAll('input[name="destinations"]:checked'))
+                    .map((el) => (el instanceof HTMLInputElement ? el.value : ""))
+                    .filter(Boolean);
+
+                const updateChars = () => {
+                  if (!(charCountEl instanceof HTMLElement)) return;
+                  const v = textarea instanceof HTMLTextAreaElement ? textarea.value.length : 0;
+                  charCountEl.textContent = String(v);
+                };
+
+                const updateDestCount = () => {
+                  if (!(destCountEl instanceof HTMLElement)) return;
+                  destCountEl.textContent = String(selectedDestinations().length);
+                };
+
+                const updateSummary = () => {
+                  const n = getValue(nameEl);
+                  const e = getValue(emailEl);
+                  const p = getValue(phoneEl);
+                  const t = getValue(typeEl);
+                  const s = getValue(slotEl);
+                  const d = selectedDestinations();
+
+                  if (sumName) sumName.textContent = n || "—";
+                  if (sumEmail) sumEmail.textContent = e || "—";
+                  if (sumPhone) sumPhone.textContent = p || "—";
+                  if (sumType) sumType.textContent = t || "—";
+                  if (sumSlot) sumSlot.textContent = s || "—";
+                  if (sumDests) sumDests.textContent = d.length ? d.join(", ") : "Vælg destinationer";
+                };
+
+                const fillSlotOptions = (type) => {
+                  if (!(slotEl instanceof HTMLSelectElement)) return;
+                  slotEl.innerHTML = "";
+
+                  const first = document.createElement("option");
+                  first.value = "";
+                  first.textContent = "Vælg dato & tidspunkt";
+                  first.disabled = true;
+                  first.selected = true;
+                  slotEl.appendChild(first);
+
+                  const list = (SLOTS && SLOTS[type]) || [];
+                  for (const item of list) {
+                    const opt = document.createElement("option");
+                    opt.value = item.value;
+                    opt.textContent = item.label;
+                    slotEl.appendChild(opt);
+                  }
+
+                  slotEl.disabled = list.length === 0;
+                };
+
+                form.addEventListener("change", (e) => {
+                  const target = e.target;
+
+                  if (target instanceof HTMLSelectElement && target.id === "meetingType") {
+                    fillSlotOptions(target.value);
+                  }
+
+                  if (target instanceof HTMLInputElement && target.name === "destinations") {
+                    updateDestCount();
+                  }
+
+                  updateSummary();
+                });
+
+                form.addEventListener("input", () => {
+                  updateChars();
+                  updateSummary();
+                });
+
+                let confirmed = false;
+
+                form.addEventListener("submit", (e) => {
+                  if (confirmed) return;
+                  e.preventDefault();
+
+                  const n = getValue(nameEl);
+                  const em = getValue(emailEl);
+                  const ph = getValue(phoneEl);
+                  const ty = getValue(typeEl);
+                  const sl = getValue(slotEl);
+                  const ds = selectedDestinations();
+                  const msg = getValue(textarea);
+
+                  if (cName) cName.textContent = n || "—";
+                  if (cEmail) cEmail.textContent = em || "—";
+                  if (cPhone) cPhone.textContent = ph || "—";
+                  if (cType) cType.textContent = ty || "—";
+                  if (cSlot) cSlot.textContent = sl || "—";
+                  if (cDests) cDests.textContent = ds.length ? ds.join(", ") : "Vælg destinationer";
+                  if (cMsg) cMsg.textContent = msg || "—";
+
+                  dialog.showModal();
+                });
+
+                if (btnCancel instanceof HTMLElement) {
+                  btnCancel.addEventListener("click", () => dialog.close());
+                }
+
+                if (btnSubmit instanceof HTMLElement) {
+                  btnSubmit.addEventListener("click", () => {
+                    confirmed = true;
+                    dialog.close();
+                    form.requestSubmit();
+                  });
+                }
+
+                updateChars();
+                updateDestCount();
+                updateSummary();
+              })();
+            </script>
+          </section>
+        </div>
+      </section>
+
+      <footer class="forms__footer">
+        <p class="fineprint">
+          Ved tilmelding accepterer du, at HøjskolenDK må sende info om infomødet. Siden er et studieprojekt og er ikke
+          indekseret.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
