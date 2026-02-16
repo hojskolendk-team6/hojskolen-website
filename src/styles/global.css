@@ -96,7 +96,13 @@ section {
 }
 
 .info-right img {
-  width: 550px;
+  width: 500px;
+  height: auto;
+  border-radius: 8px;
+
+  /* background-color: white;
+  padding: 10px 10px 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.217); */
 }
 
 .info-left {
