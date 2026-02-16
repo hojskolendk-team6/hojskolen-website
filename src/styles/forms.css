@@ -18,9 +18,6 @@
   line-height: 1.05;
   margin: 20px 0 36px;
 }
-.forms__hero .lead {
-  margin: 12px 0;
-}
 
 *,
 *::before,
@@ -76,45 +73,37 @@ h1 {
   font-size: clamp(32px, 4.2vw, 52px);
   letter-spacing: -0.02em;
   line-height: 1.05;
+  text-align: center;
 }
 
 .lead {
-  max-width: 70ch;
-  margin: 0 0 18px;
-  color: var(--muted);
   font-size: clamp(16px, 1.7vw, 18px);
+  color: black;
+  text-align: center;
 }
-
 .trustRow {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 14px 0 14px;
+
+  width: 100%;
   padding: 0;
-  margin: 0;
+  margin-top: 20px;
+
   list-style: none;
 }
 
 .trustRow li {
-  border: 0;
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
   font-weight: 800;
   font-size: 14px;
   color: var(--ink);
-  display: inline-flex;
-  align-items: center;
 }
 
-.trustRow li::before {
+.trustRow li:not(:first-child)::before {
   content: "•";
-  opacity: 0.35;
-  margin-right: 10px;
-}
-
-.trustRow li:first-child::before {
-  content: "";
-  margin-right: 0;
+  opacity: 0.4;
+  margin: 0 10px;
 }
 
 .forms__content {
@@ -149,7 +138,7 @@ h1 {
   padding: 12px;
   border-radius: 14px;
   border: 1px dashed rgba(15, 107, 107, 0.35);
-  background: var(--accentSoft);
+  background: #d5e7ee;
 }
 
 .miniMedia {
@@ -183,6 +172,7 @@ h1 {
 
 .tiny {
   font-size: 12px;
+  margin-top: 2%;
 }
 
 .sr-only {
@@ -379,9 +369,10 @@ h1 {
 
 .summaryBox {
   border: 1px solid rgba(15, 107, 107, 0.28);
-  background: rgba(15, 107, 107, 0.08);
+  background: #d5e7ee;
   border-radius: 16px;
   padding: 12px;
+  margin-top: 5%;
 }
 
 .summaryBox h3 {
@@ -434,7 +425,7 @@ h1 {
 }
 
 .btn--primary {
-  background: var(--accent);
+  background: #752727;
   color: #fff;
 }
 
@@ -462,6 +453,7 @@ h1 {
   margin: 0;
   color: var(--muted);
   font-size: 13px;
+  text-align: center;
 }
 
 .confirmDialog {

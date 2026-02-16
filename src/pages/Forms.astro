@@ -1,5 +1,6 @@
 ---
 import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/forms.css";
 ---
 
@@ -24,16 +25,11 @@ import "../styles/forms.css";
     <main class="forms">
       <header class="forms__hero">
         <div class="forms__heroInner">
-          <p class="badge">Uforpligtende infomøde</p>
           <h1>Kom og mærk efter</h1>
        <p class="lead">
-  Du tilmelder dig <strong>kun et infomøde</strong> og mærker om rejsen er noget for dig.
+  Du tilmelder dig <strong>kun et infomøde</strong> og mærker om rejsen er noget for dig. <br>
+    Få en fornemmelse af fællesskabet, destinationerne og stil alle dine spørgsmål.
 </p>
-
-<p class="lead">
-  Få en fornemmelse af fællesskabet, destinationerne og stil alle dine spørgsmål.
-</p>
-
 
           <ul class="trustRow" aria-label="Tryghedspunkter">
             <li>Gratis</li>
@@ -419,13 +415,7 @@ import "../styles/forms.css";
           </section>
         </div>
       </section>
-
-      <footer class="forms__footer">
-        <p class="fineprint">
-          Ved tilmelding accepterer du, at HøjskolenDK må sende info om infomødet. Siden er et studieprojekt og er ikke
-          indekseret.
-        </p>
-      </footer>
+        <Footer />
     </main>
   </body>
 </html>
