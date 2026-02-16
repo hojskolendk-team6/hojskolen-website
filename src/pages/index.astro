@@ -7,6 +7,7 @@ import Layout from '../components/Layout.astro';
 import Polaroid from '../components/Polaroid.astro';
 import ElevHistorie from "../components/ElevHistorie.astro";
 import Hero from "../components/Hero.astro";
+import Info from "../components/info.astro";
 ---
 
 	<Layout>
@@ -42,8 +43,23 @@ import Hero from "../components/Hero.astro";
 <Polaroid /></section>
 
 <section class="yellowsection">
+<div class="info-left">
+<h2>ONLINE INFOMØDE</h2>
 <h1>Kom til infomøde</h1>
+<p class="p-info">Kig forbi et af vores hyggelige online-infomøder - vi glæder os til at møde dig!</p>
+
+<Info dato="06 Januar" aarstal="2026" tid="Kl. 18.30 - 20.00"/>
+<Info dato="03 Februar" aarstal="2026" tid="Kl. 18.30 - 20.00"/>
+<Info dato="17 Marts" aarstal="2026" tid="Kl. 18.30 - 20.00"/>
+<Info dato="14 April" aarstal="2026" tid="Kl. 18.30 - 20.00"/>
+<Info dato="05 Maj" aarstal="2026" tid="Kl. 18.30 - 20.00"/>
+<Info dato="09 Juni" aarstal="2026" tid="Kl. 18.30 - 20.00"/>
+</div>
+<div class="info-right">
+	<img src="/billeder/image-hover_carousel.png" alt="image-hover">
+</div>
 </section>
+
 
 <section class="bluesection">
 <h1>Historier fra elever</h1>

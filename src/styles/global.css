@@ -82,3 +82,36 @@ section {
 .p-overskift {
   text-align: center;
 }
+
+/* Infomøde */
+.yellowsection {
+  display: grid;
+  grid-column: 1fr 1fr;
+  padding-top: 40px;
+}
+
+.info-right {
+  grid-column: 2/3;
+  align-content: center;
+}
+
+.info-right img {
+  width: 550px;
+}
+
+.info-left {
+  padding-left: 80px;
+}
+
+.info-left h1 {
+  text-align: left;
+}
+
+.info-left h2 {
+  font-size: 20px;
+  color: #752727;
+}
+
+.p-info {
+  width: 500px;
+}

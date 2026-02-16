@@ -1,0 +1,40 @@
+---
+const {dato, aarstal,tid,} = Astro.props;
+---
+
+<article class="infomode">
+<img class="kalender" src="/billeder/kalender.png" alt="kalender">
+<p class="dato">{dato}</p>
+<p class="aarstal">{aarstal}</p>
+<p class="tid">{tid}</p>
+</article>
+
+<style>
+.infomode{
+display: flex;
+width: 600px;
+border-bottom: 2px dotted #752727;
+padding-bottom: 1px;
+padding-top: 20px;
+}
+
+.dato{
+     font-weight: bold;
+     padding-right: 5px;
+}
+
+.tid{
+ margin-left: auto;
+ font-weight: bold;
+}
+
+
+.kalender{
+    width: 22px;
+    height: 18px;
+    padding-right: 5px;
+    
+}
+
+
+</style>
