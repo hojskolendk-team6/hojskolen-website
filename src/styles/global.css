@@ -7,7 +7,7 @@
 :root {
   --bgcolor: #fffbe7;
   --blue: #d5e7ee;
-  --red: #752727;
+  --red: #ce5501;
 }
 /* Font */
 body {
@@ -115,7 +115,7 @@ section {
 
 .info-left h2 {
   font-size: 20px;
-  color: #752727;
+  color: #ce5501;
 }
 
 .p-info {
